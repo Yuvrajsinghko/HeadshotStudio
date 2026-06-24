@@ -3,7 +3,7 @@ import UploadCard from "../components/UploadCard";
 import { useHeadshot } from "../hooks/useHeadshot";
 
 const Home = () => {
-  const { uploadError, uploadStatus, handleUploadError, handleUploadStart } =
+  const { uploadError, uploadStatus, handleUploadError, handleUploadStart,handleUploadSuccess } =
     useHeadshot();
   return (
     <div className="min-h-screen">
@@ -16,7 +16,13 @@ const Home = () => {
       </header>
 
       <Hero />
-      <UploadCard uploadStatus={uploadStatus} uploadError={uploadError} onUploadError = {handleUploadError} onUploadStart = {handleUploadStart} />
+      <UploadCard
+        uploadStatus={uploadStatus}
+        uploadError={uploadError}
+        onUploadError={handleUploadError}
+        onUploadStart={handleUploadStart}
+        onUploadSuccess={handleUploadSuccess}
+      />
     </div>
   );
 };
