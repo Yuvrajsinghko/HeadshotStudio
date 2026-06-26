@@ -2,6 +2,7 @@ import { AdvancedImage, lazyload, placeholder } from "@cloudinary/react";
 import { Hero } from "../components/Hero";
 import UploadCard from "../components/UploadCard";
 import { useHeadshot } from "../hooks/useHeadshot";
+import TransformationGrid from "../components/TransformationGrid";
 
 const Home = () => {
   const {
@@ -11,6 +12,8 @@ const Home = () => {
     handleUploadStart,
     handleUploadSuccess,
     originalImage,
+    hasUpload,
+    presetImages,
   } = useHeadshot();
   return (
     <div className="min-h-screen">
@@ -30,7 +33,7 @@ const Home = () => {
         onUploadStart={handleUploadStart}
         onUploadSuccess={handleUploadSuccess}
       />
-      {originalImage && (
+      {hasUpload && originalImage && (
         <section>
           <div>
             <h2>Original Image</h2>
@@ -41,6 +44,13 @@ const Home = () => {
               className="mx-auto rounded-xl shadow-lg"
             />
           </div>
+
+          {hasUpload && (
+            <TransformationGrid
+              title="AI Headshot Styles"
+              presets={presetImages}
+            />
+          )}
         </section>
       )}
     </div>

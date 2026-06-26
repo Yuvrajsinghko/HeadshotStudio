@@ -57,7 +57,7 @@ const UploadCard = ({
 
   return (
     <section id="upload" className="px-4 py-12">
-      <div className="mx-auto mx-w-2xl">
+      <div className="mx-auto max-w-2xl">
         <h2 className="mb-2 text-center text-2xl font-semibold">
           Upload Your Selfie
         </h2>

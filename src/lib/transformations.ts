@@ -6,6 +6,7 @@ import { format, quality } from "@cloudinary/url-gen/actions/delivery";
 import { auto as autoQuality } from "@cloudinary/url-gen/qualifiers/quality";
 import { auto } from "@cloudinary/url-gen/qualifiers/format";
 import type { HeadshotPreset } from "../types";
+import { generativeBackgroundReplace, generativeReplace } from "@cloudinary/url-gen/actions/effect";
 
 const WIDTH = 600;
 const HEIGHT = 750;
